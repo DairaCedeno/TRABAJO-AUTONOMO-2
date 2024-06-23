@@ -2,8 +2,6 @@ import express from 'express';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { mergeResolvers } from '@graphql-tools/merge';
 import { graphqlHTTP } from 'express-graphql';
-import { data } from './config';
-import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
 
@@ -35,6 +33,6 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 app.listen(5050, () => {
-  console.log(`Servidor GraphQL ejecutándose en http://localhost:5000/graphql`);
+  console.log(`Servidor GraphQL ejecutándose en http://localhost:5050/graphql`);
 });
  

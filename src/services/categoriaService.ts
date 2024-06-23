@@ -22,7 +22,7 @@ los endpoints de la api de java entidad categoria son:
 - DELETE /categorias/{id}
 */
 
-const API_BASE_URL = `${data.URL_API_JAVA}/categorias`;
+const API_BASE_URL = data.URL_API_JAVA;
 
 // obtener una categoria por id
 export const getCategoria = async (id: number) => {

@@ -23,7 +23,7 @@ los endpoints de la api de java entidad empleado son:
 */
 
 
-const API_BASE_URL = `${data.PORT_JAVA}/empleados`;
+const API_BASE_URL = data.URL_API_JAVA;
 
 // obtener un empleado por id
 export const getEmpleado = async (id: number) => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { data } from '../config';
 
-const API_BASE_URL = `${data.URL_API_JAVA}/clientes`;
+const API_BASE_URL = data.URL_API_JAVA;
 
 
 // en este archivo se definen los servicios para la entidad cliente de la api de java
@@ -18,11 +18,11 @@ para la api de java, las entidades existentes son:
 - categorias
 
 los endpoints de la api de java entidad cliente son:
-- GET /empleados
-- GET /empleados/{id}
-- POST /empleados
-- PUT /empleados/{id}
-- DELETE /empleados/{id}
+- GET /clientes
+- GET /clientes/{id}
+- POST /clientes
+- PUT /clientes/{id}
+- DELETE /clientes/{id}
 */
 
 // obtener un cliente por id
@@ -38,8 +38,8 @@ export const getClientes = async () => {
 };
 
 // crear un cliente
-export const createCliente = async (nombre: string, apellido: string, CI: string, telefono: string, direccion: string, email: string) => {
-  const response = await axios.post(`${API_BASE_URL}/clientes`, { nombre, apellido, CI, telefono, direccion, email });
+export const createCliente = async (nombre: string, apellido: string, ci: string, telefono: string, direccion: string, email: string) => {
+  const response = await axios.post(`${API_BASE_URL}/clientes`, { nombre, apellido, ci, telefono, direccion, email });
   return response.data;
 };
 

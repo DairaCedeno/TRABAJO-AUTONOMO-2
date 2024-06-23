@@ -6,60 +6,60 @@
 # Subscription: tipo de dato que define las suscripciones que se pueden realizar
 
 type Cliente {
-  id: Int!
-  nombre: String!
-  apellido: String!
-  CI: String!
-  telefono: String!
-  direccion: String!
-  email: String!
-  facturas: [Factura!]!
+  id: Int
+  nombre: String
+  apellido: String
+  ci: String
+  telefono: String
+  direccion: String
+  email: String
+  facturas: [Factura]
 }
 
 type Empleado {
   id: Int!
-  nombre: String!
-  apellido: String!
-  CI: String!
-  telefono: String!
-  direccion: String!
-  facturas: [Factura!]!
+  nombre: String
+  apellido: String
+  ci: String
+  telefono: String
+  direccion: String
+  facturas: [Factura]
 }
 
 type Categoria {
   id: Int!
-  nombre: String!
-  estado: String!
-  tipo: String!
-  productos: [Producto!]!
+  nombre: String
+  estado: String
+  tipo: String
+  productos: [Producto]
 }
 
 type Producto {
   id: Int!
-  nombre: String!
-  descripcion: String!
-  precio: Float!
-  stock: Int!
-  categoria: Categoria!
-  ProductoFacturas: [ProductoFactura!]!
+  nombre: String
+  descripcion: String
+  precio: Float
+  stock: Int
+  categoria: Categoria
+  ProductoFacturas: [ProductoFactura]
 }
 
 type ProductoFactura {
   id: Int!
-  cantidad: Int!
-  precio: Float!
-  tamano: String!
-  peso: Float!
-  total: Float!
-  facturas: [Factura!]!
+  cantidad: Int
+  precio: Float
+  tamano: String
+  peso: Float
+  total: Float
+  facturas: [Factura]
 }
 
 type Factura {
   id: Int!
-  fecha: String!
-  total: Float!
-  descuento: Float!
-  productos: [ProductoFactura!]!
+  fecha: String
+  total: Float
+  descuento: Float
+  productos: [ProductoFactura]
 }
 
 type Query {
@@ -79,19 +79,19 @@ type Query {
 
 type Mutation {
   createCliente(
-    nombre: String!
-    apellido: String!
-    CI: String!
-    telefono: String!
-    direccion: String!
-    email: String!
+    nombre: String
+    apellido: String
+    ci: String
+    telefono: String
+    direccion: String
+    email: String
   ): Cliente
 
   updateCliente(
     id: Int!
     nombre: String
     apellido: String
-    CI: String
+    ci: String
     telefono: String
     direccion: String
     email: String
@@ -102,7 +102,7 @@ type Mutation {
   createEmpleado(
     nombre: String!
     apellido: String!
-    CI: String!
+    ci: String!
     telefono: String!
     direccion: String!
   ): Empleado
@@ -111,7 +111,7 @@ type Mutation {
     id: Int!
     nombre: String
     apellido: String
-    CI: String
+    ci: String
     telefono: String
     direccion: String
   ): Empleado
@@ -119,9 +119,9 @@ type Mutation {
   deleteEmpleado(id: Int!): Empleado
 
   createCategoria(
-    nombre: String!
-    estado: String!
-    tipo: String!
+    nombre: String
+    estado: String
+    tipo: String
   ): Categoria
 
   updateCategoria(
@@ -134,11 +134,11 @@ type Mutation {
   deleteCategoria(id: Int!): Categoria
 
   createProducto(
-    nombre: String!
-    descripcion: String!
-    precio: Float!
-    stock: Int!
-    categoriaId: Int!
+    nombre: String
+    descripcion: String
+    precio: Float
+    stock: Int
+    categoriaId: Int
   ): Producto
 
   updateProducto(
@@ -177,10 +177,10 @@ type Mutation {
 
   createFactura(
     fecha: String!
-    total: Float!
-    descuento: Float!
-    clienteId: Int!
-    empleadoId: Int!
+    total: Float
+    descuento: Float
+    clienteId: Int
+    empleadoId: Int
   ): Factura
 
   updateFactura(
